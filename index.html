@@ -9,7 +9,7 @@
 		/>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Preview and download any image from the internet</title>
+		<title>Preview and download any image from the internet!!</title>
 
 		<style>
 			body {
@@ -24,6 +24,15 @@
 				text-align: center;
 				font-family: "Roboto", sans-serif;
 				margin-bottom: 2rem;
+			}
+
+			.heading-arrow{
+				width: 25px;
+				height: 25px;
+				color: white;
+				margin-left: 4px;
+				margin-right: 4px;
+				transform: rotate(180deg);
 			}
 
 			.preview-image {
@@ -106,6 +115,22 @@
 		<section class="preview-image">
 			<div class="heading">
 				Preview and download images, paste link below
+				<span
+					><svg
+						xmlns="http://www.w3.org/2000/svg"
+						fill="none"
+						viewBox="0 0 24 24"
+						stroke-width="1.5"
+						stroke="currentColor"
+						class="heading-arrow"
+					>
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							d="m15 15-6 6m0 0-6-6m6 6V9a6 6 0 0 1 12 0v3"
+						/>
+					</svg>
+				</span>
 			</div>
 			<div class="input-container">
 				<input type="text" class="input" id="input-link" />
