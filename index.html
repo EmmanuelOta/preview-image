@@ -51,12 +51,14 @@
 		.image-container {
 			display: none;
 			margin: 2rem;
+			max-width: fit-content;
+			max-height: fit-content;
 		}
 
 		.img-btn {
-			padding: 9px;
+			padding: 12px;
 			color: white;
-			background-color: blue;
+			background-color: rgb(81, 81, 238);
 			border-radius: 6px;
 			outline: none;
 			border: none;
@@ -91,8 +93,8 @@
 			const image_container = document.getElementById("img-container");
 			const img = document.getElementById("img");
 			img.src = input_link;
-			img.width = 100;
-			img.height = 100;
+			//img.width = 100;
+			//img.height = 100;
 			image_container.style.display = "flex";
 			image_container.style.flexDirection = "column";
 			image_container.style.justifyContent = "center";
