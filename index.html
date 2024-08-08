@@ -77,6 +77,14 @@
 			.img-btn:last-child {
 				transform: translateY(6px);
 			}
+
+			.img-btn-svg {
+				width: 6px;
+				height: 6px;
+				color: white;
+				margin-left: 2px;
+				margin-right: 2px;
+			}
 		</style>
 	</head>
 	<body>
@@ -98,7 +106,7 @@
 							viewBox="0 0 24 24"
 							stroke-width="1.5"
 							stroke="currentColor"
-							class="size-6"
+							class="img-btn-svg
 						>
 							<path
 								stroke-linecap="round"
@@ -137,7 +145,7 @@
 					const download_img = await fetch(image.src);
 					const image_blob = await download_img.blob();
 					link.href = URL.createObjectURL(image_blob);
-					link.download = "preview-image";
+					link.download = "downimage-pic";
 					link.click(); // Simulate click
 					URL.revokeObjectURL(image_blob);
 				};
