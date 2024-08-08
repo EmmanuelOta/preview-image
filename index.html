@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+			rel="stylesheet"
+		/>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Preview and download any image from the internet</title>
@@ -14,10 +20,10 @@
 			.heading {
 				font-size: larger;
 				font-weight: 600;
-				color: rgb(43, 42, 42);
+				color: rgb(131, 124, 124);
 				text-align: center;
-				font-family: sans-serif;
-				margin-bottom: 5rem;
+				font-family: "Roboto", sans-serif;
+				margin-bottom: 2rem;
 			}
 
 			.preview-image {
@@ -98,7 +104,9 @@
 	</head>
 	<body>
 		<section class="preview-image">
-			<div class="heading">Preview and download images, paste link below</div>
+			<div class="heading">
+				Preview and download images, paste link below
+			</div>
 			<div class="input-container">
 				<input type="text" class="input" id="input-link" />
 				<button class="preview-btn" id="preview-button">
