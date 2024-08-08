@@ -1,122 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Preview and download any image frmo the internet</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Preview and download any image frmo the internet</title>
 
-	<style>
-		body {
-			box-sizing: border-box;
-			margin: 0;
-		}
+		<style>
+			body {
+				box-sizing: border-box;
+				margin: 0;
+			}
 
-		.preview-image {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			background-color: #43444627;
-			padding: 3rem;
-			margin: 0;
-			min-height: 100vh;
-		}
+			.preview-image {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				background-color: #43444627;
+				padding: 3rem;
+				margin: 0;
+				min-height: 100vh;
+			}
 
-		.input{
-			outline: none;
-			border: white;
-			margin-left: 6px;
-			margin-right: 6px;
-			border-radius: 9px;
-			padding: 6px;
-		}
+			.input {
+				outline: none;
+				border: white;
+				margin-left: 6px;
+				margin-right: 6px;
+				border-radius: 9px;
+				padding: 6px;
+			}
 
-		.input-container{
-			display: flex;
-			flex-direction: row;
-		}
+			.input-container {
+				display: flex;
+				flex-direction: row;
+			}
 
-		.preview-btn {
-			padding: 12px;
-			color: white;
-			background-color: rgb(81, 81, 238);
-			border-radius: 6px;
-			outline: none;
-			border: none;
-		}
+			.preview-btn {
+				padding: 12px;
+				color: white;
+				background-color: rgb(81, 81, 238);
+				border-radius: 6px;
+				outline: none;
+				border: none;
+			}
 
-		.preview-btn:hover{
-			cursor: pointer;
-		}
+			.preview-btn:hover {
+				cursor: pointer;
+			}
 
-		.image-container {
-			display: none;
-			margin: 2rem;
-			max-width: fit-content;
-			max-height: fit-content;
-		}
+			.image-container {
+				display: none;
+				margin: 2rem;
+				max-width: fit-content;
+				max-height: fit-content;
+			}
 
-		.img-btn {
-			padding: 12px;
-			color: white;
-			background-color: rgb(81, 81, 238);
-			border-radius: 6px;
-			outline: none;
-			border: none;
-			margin-top: 1rem;
-		}
+			.img-btn {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				justify-content: center;
+				padding: 12px;
+				color: white;
+				background-color: rgb(81, 81, 238);
+				border-radius: 6px;
+				outline: none;
+				border: none;
+				margin-top: 1rem;
+			}
 
-		.img-btn:hover{
-			cursor: pointer;
-		}
-	</style>
-</head>
-<body>
-	<section class="preview-image">
-		<div class="input-container">
-			<input type="text" class="input" id="input-link"/>
-			<button class="preview-btn" id="preview-button">Preview Image</button>
-		</div>
-		<div class="image-container" id="img-container">
-			<img id="img"/> 
-			<button class="img-btn" onclick="downloadImage('img')">Download Image</button>
-		</div>
+			.img-btn:hover {
+				cursor: pointer;
+			}
 
-	</section>
+			.img-btn:last-child {
+				transform: translateY(6px);
+			}
+		</style>
+	</head>
+	<body>
+		<section class="preview-image">
+			<div class="input-container">
+				<input type="text" class="input" id="input-link" />
+				<button class="preview-btn" id="preview-button">
+					Preview Image
+				</button>
+			</div>
+			<div class="image-container" id="img-container">
+				<img id="img" />
+				<button class="img-btn" onclick="downloadImage('img')">
+					Download Image
+					<span
+						><svg
+							xmlns="http://www.w3.org/2000/svg"
+							fill="none"
+							viewBox="0 0 24 24"
+							stroke-width="1.5"
+							stroke="currentColor"
+							class="size-6"
+						>
+							<path
+								stroke-linecap="round"
+								stroke-linejoin="round"
+								d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+							/></svg
+					></span>
+				</button>
+			</div>
+		</section>
 
-	<script>
-		
-		document.addEventListener("DOMContentLoaded", () => {
-			const preview_button = document.getElementById("preview-button")
-			preview_button.addEventListener("click", () => {
-			const input_link = document.getElementById("input-link").value;
-			//set the image display to flex
-			const image_container = document.getElementById("img-container");
-			const img = document.getElementById("img");
-			img.src = input_link;
-			//img.width = 100;
-			//img.height = 100;
-			image_container.style.display = "flex";
-			image_container.style.flexDirection = "column";
-			image_container.style.justifyContent = "center";
-			image_container.style.alignSelf = "center";
-		})
+		<script>
+			document.addEventListener("DOMContentLoaded", () => {
+				const preview_button =
+					document.getElementById("preview-button");
+				preview_button.addEventListener("click", () => {
+					const input_link =
+						document.getElementById("input-link").value;
+					//set the image display to flex
+					const image_container =
+						document.getElementById("img-container");
+					const img = document.getElementById("img");
+					img.src = input_link;
+					//img.width = 100;
+					//img.height = 100;
+					image_container.style.display = "flex";
+					image_container.style.flexDirection = "column";
+					image_container.style.justifyContent = "center";
+					image_container.style.alignSelf = "center";
+				});
 
-		
-		window.downloadImage = async (img) => {
-			//get image using id provided
-			const image = document.getElementById(img);
-			const link = document.createElement("a");
-			const download_img = await fetch(image.src);
-			const image_blob = await download_img.blob();
-			link.href = URL.createObjectURL(image_blob);
-			link.download = "preview-image";
-            link.click(); // Simulate click
-			URL.revokeObjectURL(image_blob);
-		}
-		
-	});
-		
-	</script>
-</body>
+				window.downloadImage = async (img) => {
+					//get image using id provided
+					const image = document.getElementById(img);
+					const link = document.createElement("a");
+					const download_img = await fetch(image.src);
+					const image_blob = await download_img.blob();
+					link.href = URL.createObjectURL(image_blob);
+					link.download = "preview-image";
+					link.click(); // Simulate click
+					URL.revokeObjectURL(image_blob);
+				};
+			});
+		</script>
+	</body>
 </html>
